@@ -25,7 +25,7 @@ class Server {
         this.app.use(express.urlencoded({ extended: true }))
         // File Upload
         this.app.use(fileUpload({
-            useTempFiles: true,
+            useTempFiles: false,
             tempFileDir: "/temp/"
         }))
 

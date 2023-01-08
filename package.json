@@ -1,5 +1,6 @@
 {
-  "name": "practice-02-notas",
+  "engines": {"node":"18.12.1"},
+  "name": "portafolio",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
