@@ -39,8 +39,10 @@ class Server {
             await db.authenticate()
             console.log("DB Online")
         } catch (err) {
-            console.log("Error al conectar con la BD")
-            throw new Error("No se ha podido conectar con la base de datos")
+            console.log("Error al conectar con la BD\n\n")
+            console.log(err)
+            throw new Error("\n\nNo se ha podido conectar con la base de datos")
+            
         }
     }
 
