@@ -3,6 +3,7 @@ const { Msg, User, Item } = require("../db/models");
 const bcryptjs = require('bcryptjs');
 const { generarJWT } = require("../helpers/generarJWT");
 const { removeFile  , subirArchivo} = require("../helpers/file_handler");
+const { enviarGmail, uploadImagen } = require("../helpers/dtmcloud");
 
 const add_msg = async (req = request , res = response)=>{
     const {body} = req
@@ -87,14 +88,14 @@ const addItem = async (req= request , res = response )=>{
     const {body , files} = req
     const { ipTitle: title , ipDescription:description , ipUrl:url ,  ipFile } = body
     try{
-        const tempPicture = await  subirArchivo(files , ['jpg' , 'jpeg' , 'png' , 'JPG' , "JPEG" , 'PGN'] ,'uploads/img' )
+        const tempPicture = await uploadImagen(files)
         if(tempPicture.status=='200'){
             const { bag:picture} = tempPicture
             const tempItem  = new Item({ title,url ,description , picture })
             await  tempItem.save()
             return res.status(200).json({status:"200" , msg:'Item Creado con éxito' })
         }else{
-            return res.status(200).json({status:"500" , msg:'No Podemos Crear Items en este momento' ,err})
+            return res.status(200).json({status:"500" , msg:'No Podemos Crear Items en este momento'})
         }
 
     }catch( err){
@@ -103,7 +104,7 @@ const addItem = async (req= request , res = response )=>{
     }
 
 
-    res.status(200).json({status:"200" , msg: "Item Agregado con éxito"})
+    // res.status(200).json({status:"200" , msg: "Item Agregado con éxito"})
 }
 
 const getMsg = async (req = request , res = response)=>{
@@ -136,20 +137,7 @@ const deleteMsg = async (req = request ,res = response)=>{
     }
 }
 
-const enviarGmail = (contact , msg)=>{
-    const bag = new FormData()
-    bag.set('contact', contact)
-    bag.set('body', msg)
-    fetch('https://smtp.technologies-revolution.com/dtm_smtp.php' , {
-        method:"POST",
-        body: bag
-    })
-    .then(res => res.json())
-    .catch(err => {
-        console.log( "Gmail Send", err)
-    })
 
-}
 
 module.exports = { add_msg,
                    login,

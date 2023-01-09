@@ -18,7 +18,7 @@ const getItems = (prefix = "") => {
                                                 <div class="portfolio-item-caption-content text-center text-white"><i
                                                         class="fas fa-plus fa-3x"></i></div>
                                             </div>
-                                            <img class="img-fluid" src="${prefix}uploads/img/${picture}" alt="..." />
+                                            <img class="img-fluid" src="${picture}" alt="..." />
                                         </div>
                                     </div>`
 
@@ -42,7 +42,7 @@ const getItems = (prefix = "") => {
                                                                     <div class="container">
                                                                         <div class="row justify-content-center">
                                                                             <div class="col-lg-8">
-                                                                                <img class="img-fluid rounded mb-3" src="${prefix}uploads/img/${picture}"
+                                                                                <img class="img-fluid rounded mb-3" src="${picture}"
                                                                                     alt="..." />
                                                                                 <!-- Portfolio Modal - Text-->
                                                                                 <p class="mb-2">${description}

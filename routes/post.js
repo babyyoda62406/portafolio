@@ -7,7 +7,7 @@ app.post("/user/add_msg" , add_msg)
 app.post("/login" , login)
 app.post('/addUser', addUser )
 app.post('/deleteItem'  ,  [security_post]  , deleteItem )
-app.post('/addItem' ,  [security_post], addItem )
+app.post('/addItem' ,  [security_post ] , addItem )
 app.post('/getMsg' , [security_post] , getMsg)
 app.post('/deleteMsg' , [ security_post], deleteMsg)
 

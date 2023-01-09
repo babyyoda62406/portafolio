@@ -78,7 +78,7 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portafolio</h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form id="formItem" method="POST" action="/addItem">
+                        <form id="formItem" method="POST" action="/addItem" enctype="multipart/form-data">
                             <div class="mb-3 row">
                                 <label class="col-4 col-form-label">Título</label>
                                 <div class="col-8">
@@ -147,8 +147,8 @@
                             <div class="mb-3 row">
                                 <label class="col-4 col-form-label">Descripción</label>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" name="ipDescription" id="ipDescription"
-                                        placeholder="Descripción">
+                                    <textarea type="text" rows="5" class="form-control" name="ipDescription" id="ipDescription"
+                                        placeholder="Descripción" required></textarea>
                                 </div>
                             </div>
 
@@ -156,15 +156,14 @@
                                 <label class="col-4 col-form-label">URL</label>
                                 <div class="col-8">
                                     <input type="url" class="form-control" name="ipUrl" id="ipUrl"
-                                        placeholder="http://enlace.web">
+                                        placeholder="http://enlace.web" required>
                                 </div>
                             </div>
 
                             <div class="mb-3 row">
                                 <label class="col-4 col-form-label">Foto</label>
                                 <div class="col-8">
-                                    <input type="File" class="form-control" name="ipFile" id="ipFile"
-                                        placeholder="Título">
+                                    <input type="File" class="form-control" name="ipFile" id="ipFile"  required>
                                 </div>
                             </div>
                             <div class="modal-footer">

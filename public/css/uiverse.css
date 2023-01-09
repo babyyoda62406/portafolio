@@ -158,7 +158,8 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(#504b45 0%, #3c3b37 100%);
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
+    height: 100%;
 }
 
 .skills_container .card .header .img-box {
@@ -170,6 +171,7 @@
     width: 100%;
     max-height: 94px;
     min-height: 94px;
+    height: 100%;
 }
 
 
@@ -181,6 +183,7 @@
 
 .skills_container .card a {
     text-decoration: none !important;
+    height: 100%;
 }
 
 .skills_container .card .content {
@@ -397,7 +400,7 @@
     }   
 
     .container_uiverse .terminal_body {       
-        font-size: 15px;
+        font-size: 18px;
     }
 }
 
@@ -412,6 +415,16 @@
         grid-template-columns: 1fr ;
         grid-template-rows: 280px   280px ;
     }   
+    .container_uiverse .terminal_body {       
+        font-size: 17px;
+    }
+    
+}
+
+@media (max-width: 351px) {
+    .container_uiverse .terminal_body {       
+        font-size: 16px;
+    }    
 }
 
 
@@ -419,12 +432,26 @@
     .d-none-329{
         display: none !important;
     }    
+    .container_uiverse .terminal_body {       
+        font-size: 15px;
+    }    
 }
+
+@media (max-width: 308px) {
+    .container_uiverse .terminal_body {       
+        font-size: 14.3px;
+    }        
+}
+
 
 @media (max-width: 290px) {
     .d-none-290{
         display: none !important;
     }
+
+    .container_uiverse .terminal_body {       
+        font-size: 13.8px;
+    }        
 }
 
 

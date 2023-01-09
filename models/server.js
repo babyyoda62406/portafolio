@@ -5,8 +5,6 @@ const { db } = require('../db/conexion')
 const { security, security_get } = require("../middlewares/security")
 const { response } = require("express")
 
-
-
 class Server {
     constructor(arg) {
         this.__port = arg
