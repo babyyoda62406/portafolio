@@ -50,9 +50,9 @@ window.addEventListener('load', () => {
 })
 
 const questions = [
-    { question: 'Introduzca su nombre', name: "ipName" },
+    { question: 'Nombre', name: "ipName" },
     { question: 'Email o Teléfono', name: "ipContact" },
-    { question: 'Introduzca su Mensaje', name: "ipMsg" },
+    { question: 'Mensaje', name: "ipMsg" },
 ];
 
 // Transition Times
@@ -156,6 +156,7 @@ function formComplete() {
 
     const h1 = document.createElement('h1');
     h1.classList.add('end');
+    h1.classList.add('text-center');
     h1.appendChild(
         document.createTextNode(
             `Gracias ${questions[0].answer
