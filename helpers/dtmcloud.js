@@ -1,6 +1,6 @@
 require('dotenv').config()
 const FormData = require('form-data')
-const fetch   = require('node-fetch')
+const fetch = require('node-fetch')
 
 
 const enviarGmail = (contact, msg) => {
@@ -28,28 +28,53 @@ const enviarGmail = (contact, msg) => {
 
 const uploadImagen = (files) => {
     return new Promise((resolve, reject) => {
-        const  bag = new FormData()
+        const bag = new FormData()
         const { ipFile } = files
 
-        bag.append('ipFile'  , ipFile.data , 'dave.jpg')
+        bag.append('ipFile', ipFile.data, 'dave.jpg')
         bag.append('req', 'uploadImage')
         bag.append('route', 'portafolio/img')
 
         fetch(`${process.env.DTMCLOUDURL}/${process.env.DTMCLOUDENDPOINT}`, {
-            method: "POST", 
+            method: "POST",
             body: bag
         })
 
-        .then(res => res.json())
-        .then(arg => {
-            const {filename} = arg
-            resolve({status: '200' , bag:filename  })
-        })
+            .then(res => res.json())
+            .then(arg => {
+                const { filename } = arg
+                resolve({ status: '200', bag: filename })
+            })
 
-        .catch(err =>{
-            console.log(err)
-            reject({status: '501'}) 
+            .catch(err => {
+                console.log(err)
+                reject({ status: '501' })
+            })
+
+    })
+}
+
+
+const eliminarImagen = (route, ipName) => {
+    return new Promise((resolve, reject) => {
+        const bag = new FormData()
+        bag.append('req', 'deleteImage')
+        bag.append('route', route)
+        bag.append('ipName', ipName)
+
+        fetch(`${process.env.DTMCLOUDURL}/${process.env.DTMCLOUDENDPOINT}`, {
+            method: 'POST',
+            body: bag
         })
+            .then(res => res.json())
+            .then(arg => {
+                console.log(arg)
+                resolve(arg)
+            })
+            .catch(err => {
+                console.log("Error al manejar la nuve")
+                reject(err)
+            })
 
     })
 }
@@ -57,5 +82,6 @@ const uploadImagen = (files) => {
 
 module.exports = {
     enviarGmail,
-    uploadImagen
+    uploadImagen,
+    eliminarImagen
 }

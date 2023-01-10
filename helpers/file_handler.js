@@ -39,7 +39,7 @@ const removeFile = (src, file ) => {
      return new Promise(async (resolve, reject )=>{
         try{
             if(fs.existsSync(resource)){
-                await fs.unlinkSync(resource)
+                fs.unlinkSync(resource)
                 return resolve({status:"200" , msg:"Se ha eliminado el archivo correctamente"})
             }else{
                 return reject({status:'400' , msg:'No existe el recurso solicitado'})
