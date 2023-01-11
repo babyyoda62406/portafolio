@@ -418,7 +418,13 @@
     .container_uiverse .terminal_body {       
         font-size: 17px;
     }
-    
+
+    .d-none-397{
+        display: none !important;
+    }
+    .portfolio-modal-title{
+        font-size: 1.5rem !important    ;
+    }
 }
 
 @media (max-width: 351px) {

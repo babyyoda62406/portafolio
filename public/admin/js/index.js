@@ -14,13 +14,13 @@ const getItems = (prefix = "") => {
                 bag.forEach(element => {
                     const { id, title, picture, description, url } = element
                     const tempItem = `<div class="col-md-6 col-lg-4 mb-5">
-                                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal${id}">
+                                        <div class="border portfolio-item mx-auto h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal${id}">
                                             <div
                                                 class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                                 <div class="portfolio-item-caption-content text-center text-white"><i
                                                         class="fas fa-plus fa-3x"></i></div>
                                             </div>
-                                            <img class="img-fluid" src="${picture}" alt="..." />
+                                            <img class="img-fluid h-100" src="${picture}" alt="..." />
                                         </div>
                                     </div>`
 
@@ -32,7 +32,7 @@ const getItems = (prefix = "") => {
                                                                     <div class="d-flex justify-content-between">
                                                                         <div></div>
                                                                         <div class="modal-header border-0">
-                                                                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">
+                                                                            <h2 class="portfolio-modal-title text-secondary text-uppercase">
                                                                                 ${title}
                                                                             </h2>
                                                                         </div>
@@ -44,7 +44,7 @@ const getItems = (prefix = "") => {
                                                                     <div class="container">
                                                                         <div class="row justify-content-center">
                                                                             <div class="col-lg-8">
-                                                                                <img class="img-fluid rounded mb-3" src="${picture}"
+                                                                                <img class=" border  img-fluid rounded mb-3" src="${picture}"
                                                                                     alt="..." />
                                                                                 <!-- Portfolio Modal - Text-->
                                                                                 <p class="mb-2">${description}
@@ -52,11 +52,11 @@ const getItems = (prefix = "") => {
                                                                                 <div class="d-flex justify-content-between w-100 mb-3">
                                                                                     <a href = "${url}" class="btn btn-info" >
                                                                                         <i class="fas fa-share-square"></i>
-                                                                                        Ver Online
+                                                                                        <span class="d-none-397" >Ver Online</span> 
                                                                                     </a>
                                                                                     <button class="btn btn-danger" onclick=deleteItem(${id}) data-bs-dismiss="modal">
                                                                                         <i class="fas fa-xmark fa-fw"></i>
-                                                                                        Eliminar
+                                                                                        <span class="d-none-397">Eliminar</span>
                                                                                     </button>
                                                                                 </div>
                                             
