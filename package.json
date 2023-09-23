@@ -1,0 +1,39 @@
+{  
+  "name": "portafolio",
+  "engines": {
+    "node": ">=18.17.1",
+    "npm": ">=9.6.7"
+  },
+  "workspaces":
+   [
+      "front",
+      "back"
+    ],
+  "version": "2.0.1",
+  "description": "Portafolio web. Gestionable usando React / Typescript / NextUI entre otros",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "front": "cd front && npm run dev",
+    "back": "npm start  --workspaces=back"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babyyoda62406/portafolio.git"
+  },
+  "author": "Deivis Torres Mena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/babyyoda62406/portafolio/issues"
+  },
+  "homepage": "https://github.com/babyyoda62406/portafolio#readme",
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json",
+    "ignorePatterns": [
+      "front/node_modules",
+      "front/build",
+      "back/node_modules"
+    ]
+  }
+  
+}
