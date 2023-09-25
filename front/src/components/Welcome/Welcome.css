@@ -1,0 +1,78 @@
+.Welcome{
+    display: flex;
+    height: calc(100vh - 86px);
+}
+
+
+.Welcome > div{
+    padding: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid white; */
+}
+
+.Welcome > .ctLeft {
+    flex: 1;
+}
+
+.Welcome .ctLast{
+    padding: 0px;
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+
+.Welcome .ctLast .Text{
+    transform: rotateZ(90deg);
+    font-size: 120px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 0px;
+    color: rgba(240, 255, 255, 0.166);
+}
+
+.Welcome .ctLeft .title1{
+    color: #8b31ff;
+    border: 1px solid white;
+    
+}
+
+.Welcome .ctLeft .title2{
+    font-size: 64px;
+    font-weight: 900;
+    color: rgba(240, 248, 255, 0.849);
+    display: flex;
+}
+
+
+
+.Welcome .ctLeft .title2  .textUnderline {
+    display: flex;    
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.Welcome .ctLeft .title2  .textUnderline  .underLine{
+    width: 80%;
+    height: 10px; 
+    /* border: 1px solid white; */
+    margin-top: -15px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgb(188, 130, 251) 2%, rgba(115,43,189,1) 100%);
+    animation: gradiente1 1s infinite;
+}
+
+.Welcome .ctLeft .title3{
+    padding-top: 20px ;
+    color: rgba(153, 152, 153, 0.653);
+    font-size: 40px;
+    font-weight: 400;
+    font-variant: small-caps;
+    height: 150px;
+}
+
+
+
+
