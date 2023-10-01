@@ -1,0 +1,26 @@
+.CardPryect{
+    background-color: rgb(30, 30, 30) !important; 
+    color: white !important;
+}
+
+.CardPryect * {
+    color: white !important;
+}
+
+.CardPryect .ctAvatar{
+    border: 1px solid black; 
+    width: 64px !important;
+    height: 64px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    padding: 8px;
+    background-color: rgb(93, 91, 91);
+}
+
+.CardPryect .ctAvatar img.imgAvatar{
+    max-width: 100%  ;
+    max-height: 100% ;
+    width: 100%      ;
+}

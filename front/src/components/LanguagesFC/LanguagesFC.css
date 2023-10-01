@@ -1,0 +1,14 @@
+.LanguagesFC{
+    display: flex;
+    justify-content: center;
+    align-items: center ; 
+    margin: 0px  !important;
+    padding: 0px !important;
+}
+
+.LanguagesFC > div{
+
+    background-color: rgb(58, 59, 61) !important ;
+    
+        
+}
